@@ -16,12 +16,16 @@ a. Producethestandardwordcountbuttheoutputneedstobesortedbythenumberof times the
 b. The second word program counts the occurrence of unordered word pairs.Eachtime two words occur next to each other we count that as a pair. For example in the sentence a cat a rat a bat” we have “a cat” occurs twice, “a rat” occurs twice, “a bat” occurs once as we do not consider the order of the words. The last word in a line is considered as occurring before the first word in the next line. A few word pairs will not be counted if the file processed by multiple map instances. As in part a) we want the output sorted by the count in decreasing order.
 
 
- 3. 2012USTax Data. This is a csv file. This dataset contains information about income taxes filed in 2012. The data is categorized by state, zipcode and income level. There are six different income levels numbered 1 through 6. So each row in the file contains information about income taxes filed in a given state, in a given zipcode area and in one of 6 income levels. Here is a sample.
+
+   3. 2012USTax Data. This is a csv file. This dataset contains information about income taxes filed in 2012. The data is categorized by state, zipcode and income level. There are six different income levels numbered 1 through 6. So each row in the file contains information about income taxes filed in a given state, in a given zipcode area and in one of 6 income levels. Here is a sample.
  The second column STATE give the abbreviation for the state. The third column indicates the zipcode. The fourth column, AGI_STUB, gives the adjusted gross income given in numbers 1-6 with the meaning listed below.
  
-1 - $1 to $25,000
-2 - $25,000 to $50,000
-3 - $50,000 to $75,000
-4 - $75,000 tor $100,000 5 - $100,000 to $200,000 6 - $200,000 or more
+ 1 - $1 to $25,000
+ 2 - $25,000 to $50,000
+ 3 - $50,000 to $75,000
+ 4 - $75,000 tor $100,000 5 - $100,000 to $200,000 6 - $200,000 or more
+
+
+
 The fourth column, N1, givens the number of returns in the income level from the indicated zipcode. So there were 1600 tax returns from zip code 35004 with income between $1 and $25,000.
 a. Write a Hadoop program to find the total number of tax returns filed in each statei n each category. Again the program needs two command line argument, the first the input directory and the second the output directory. The input will be a file as described above. The output will be a file(s) sorted by state. Each state will have the six levels of income with the total of tax returns in each category.
